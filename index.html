@@ -671,7 +671,96 @@
 
 
 
-  <script src="script.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", event => {
+      const targetId = link.getAttribute("href");
+
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+
+      if (target) {
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+
+
+  // Navbar shadow
+  const navbar = document.querySelector(".navbar");
+
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 20);
+    });
+  }
+
+
+  // Wig buttons
+  document.querySelectorAll(".order-button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const productName =
+        button.dataset.product ||
+        button.closest(".product-card")?.querySelector("h3")?.textContent ||
+        "wig";
+
+      alert(
+        `You selected ${productName} 💕\n\nWhatsApp ordering will be connected soon.`
+      );
+
+    });
+
+  });
+
+
+  // Scroll animations
+  const elements = document.querySelectorAll(
+    ".product-card, .about-content, .about-card, .gallery-item, .contact-content"
+  );
+
+  if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+
+      });
+
+    }, {
+      threshold: 0.12
+    });
+
+    elements.forEach(element => observer.observe(element));
+
+  } else {
+
+    elements.forEach(element => {
+      element.classList.add("visible");
+    });
+
+  }
+
+
+  console.log("✨ Hair by Haddy website loaded successfully!");
+
+});
+</script>
 
 </body>
 
