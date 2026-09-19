@@ -1,48 +1,66 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hair by Haddy | Beautiful Wigs, Beautiful You</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Shop beautiful, stylish and quality wigs from Hair by Haddy."
+    content="Hair by Haddy — beautiful wigs, beautiful you."
   >
+
+  <title>Hair by Haddy | Beautiful Wigs, Beautiful You</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-  <!-- =========================
+  <!-- ==============================
        NAVIGATION
-  ========================== -->
+  =============================== -->
+
   <header class="navbar">
-    <a href="#" class="logo">
+
+    <a href="#home" class="logo">
       Hair by <span>Haddy</span>
     </a>
 
     <nav class="nav-links">
+
       <a href="#home">Home</a>
+
       <a href="#shop">Shop</a>
+
       <a href="#about">About</a>
+
       <a href="#gallery">Gallery</a>
+
       <a href="#contact">Contact</a>
+
     </nav>
 
     <a href="#shop" class="nav-button">
       Shop Wigs
     </a>
+
   </header>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+
   <main>
+
+
+    <!-- ==============================
+         HERO
+    =============================== -->
 
     <section class="hero" id="home">
 
@@ -58,11 +76,12 @@
         </h1>
 
         <p class="hero-text">
-          Discover beautiful wigs carefully selected to help you
+          Discover beautiful wig styles selected to help you
           look good, feel confident, and express your style.
         </p>
 
         <div class="hero-buttons">
+
           <a href="#shop" class="primary-button">
             Explore Wigs
           </a>
@@ -70,23 +89,40 @@
           <a href="#contact" class="secondary-button">
             Contact Haddy
           </a>
+
         </div>
 
       </div>
 
+
       <div class="hero-image">
+
+        <img
+          src="images/hero-wig.jpg"
+          alt="Beautiful wig style"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+
         <div class="image-placeholder">
+
           <span>HAIR BY HADDY</span>
-          <p>Your wig image goes here</p>
+
+          <p>
+            Add your hero wig photo
+          </p>
+
         </div>
+
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- ==============================
          SHOP
-    ========================== -->
+    =============================== -->
+
     <section class="shop section" id="shop">
 
       <div class="section-heading">
@@ -96,11 +132,12 @@
         </p>
 
         <h2>
-          Find your next <span>look.</span>
+          Find your next
+          <span>look.</span>
         </h2>
 
         <p>
-          Explore some of our featured wig styles.
+          Explore our featured wig styles.
         </p>
 
       </div>
@@ -108,70 +145,352 @@
 
       <div class="product-grid">
 
+
+        <!-- BONE STRAIGHT -->
+
         <article class="product-card">
 
           <div class="product-image">
-            Wig Image
+
+            <img
+              src="images/bone-straight.jpg"
+              alt="Bone straight wig"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="product-placeholder">
+              Bone Straight
+            </div>
+
           </div>
 
-          <div class="product-info">
-            <p class="product-category">Featured Wig</p>
-            <h3>Luxury Bob</h3>
-            <p class="product-price">₦ —</p>
 
-            <button class="order-button">
-              Ask About This Wig
-            </button>
+          <div class="product-info">
+
+            <p class="product-category">
+              Straight Hair
+            </p>
+
+            <h3>
+              Signature Bone Straight
+            </h3>
+
+            <p class="product-description">
+              Sleek, smooth and effortlessly elegant.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <span class="product-price">
+                Price on request
+              </span>
+
+              <button
+                class="order-button"
+                data-product="Signature Bone Straight"
+              >
+                Order
+              </button>
+
+            </div>
+
           </div>
 
         </article>
 
 
+
+        <!-- FRENCH CURL -->
+
         <article class="product-card">
 
           <div class="product-image">
-            Wig Image
+
+            <img
+              src="images/french-curl.jpg"
+              alt="French curl wig"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="product-placeholder">
+              French Curl
+            </div>
+
           </div>
 
-          <div class="product-info">
-            <p class="product-category">Featured Wig</p>
-            <h3>Body Wave</h3>
-            <p class="product-price">₦ —</p>
 
-            <button class="order-button">
-              Ask About This Wig
-            </button>
+          <div class="product-info">
+
+            <p class="product-category">
+              Curly Hair
+            </p>
+
+            <h3>
+              French Curl
+            </h3>
+
+            <p class="product-description">
+              Soft curls with a beautiful glamorous finish.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <span class="product-price">
+                Price on request
+              </span>
+
+              <button
+                class="order-button"
+                data-product="French Curl"
+              >
+                Order
+              </button>
+
+            </div>
+
           </div>
 
         </article>
 
 
+
+        <!-- BODY WAVE -->
+
         <article class="product-card">
 
           <div class="product-image">
-            Wig Image
+
+            <img
+              src="images/body-wave.jpg"
+              alt="Body wave wig"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="product-placeholder">
+              Body Wave
+            </div>
+
           </div>
 
-          <div class="product-info">
-            <p class="product-category">Featured Wig</p>
-            <h3>Curly Glam</h3>
-            <p class="product-price">₦ —</p>
 
-            <button class="order-button">
-              Ask About This Wig
-            </button>
+          <div class="product-info">
+
+            <p class="product-category">
+              Wavy Hair
+            </p>
+
+            <h3>
+              Classic Body Wave
+            </h3>
+
+            <p class="product-description">
+              Soft flowing waves for effortless everyday glam.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <span class="product-price">
+                Price on request
+              </span>
+
+              <button
+                class="order-button"
+                data-product="Classic Body Wave"
+              >
+                Order
+              </button>
+
+            </div>
+
           </div>
 
         </article>
+
+
+
+        <!-- SLEEK BOB -->
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="images/sleek-bob.jpg"
+              alt="Sleek bob wig"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="product-placeholder">
+              Sleek Bob
+            </div>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <p class="product-category">
+              Bob Wig
+            </p>
+
+            <h3>
+              Sleek Bob
+            </h3>
+
+            <p class="product-description">
+              A clean and stylish look with a modern finish.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <span class="product-price">
+                Price on request
+              </span>
+
+              <button
+                class="order-button"
+                data-product="Sleek Bob"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- LUXE CURLY -->
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="images/luxe-curly.jpg"
+              alt="Curly wig"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="product-placeholder">
+              Luxe Curly
+            </div>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <p class="product-category">
+              Curly Hair
+            </p>
+
+            <h3>
+              Luxe Curly
+            </h3>
+
+            <p class="product-description">
+              Full, soft curls for a bold and beautiful look.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <span class="product-price">
+                Price on request
+              </span>
+
+              <button
+                class="order-button"
+                data-product="Luxe Curly"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PIXIE CURL -->
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="images/pixie-curl.jpg"
+              alt="Pixie curl wig"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="product-placeholder">
+              Pixie Curl
+            </div>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <p class="product-category">
+              Short Hair
+            </p>
+
+            <h3>
+              Pixie Curl
+            </h3>
+
+            <p class="product-description">
+              A short, playful style with plenty of personality.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <span class="product-price">
+                Price on request
+              </span>
+
+              <button
+                class="order-button"
+                data-product="Pixie Curl"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
 
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- ==============================
          ABOUT
-    ========================== -->
+    =============================== -->
+
     <section class="about section" id="about">
 
       <div class="about-content">
@@ -186,18 +505,21 @@
         </h2>
 
         <p>
-          Hair by Haddy is focused on helping women find beautiful
-          wigs that match their style, personality, and occasion.
+          Hair by Haddy is focused on helping women discover
+          beautiful wig styles that match their personality,
+          occasion and individual style.
         </p>
 
         <p>
           Whether you're looking for something simple and elegant
-          or a style that turns heads, we're here to help you find it.
+          or a style that turns heads, we're here to help.
         </p>
 
       </div>
 
+
       <div class="about-card">
+
         <div>
           <strong>QUALITY</strong>
           <span>Beautiful styles</span>
@@ -212,14 +534,17 @@
           <strong>CARE</strong>
           <span>Personal service</span>
         </div>
+
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- ==============================
          GALLERY
-    ========================== -->
+    =============================== -->
+
     <section class="gallery section" id="gallery">
 
       <div class="section-heading">
@@ -229,26 +554,61 @@
         </p>
 
         <h2>
-          See the <span>looks.</span>
+          See the
+          <span>looks.</span>
         </h2>
+
+        <p>
+          A little inspiration for your next style.
+        </p>
 
       </div>
 
+
       <div class="gallery-grid">
 
-        <div class="gallery-item">Wig Photo</div>
-        <div class="gallery-item">Wig Photo</div>
-        <div class="gallery-item">Wig Photo</div>
-        <div class="gallery-item">Wig Photo</div>
+        <div class="gallery-item">
+          <img
+            src="images/gallery-1.jpg"
+            alt="Wig style inspiration"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="images/gallery-2.jpg"
+            alt="Wig style inspiration"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="images/gallery-3.jpg"
+            alt="Wig style inspiration"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="images/gallery-4.jpg"
+            alt="Wig style inspiration"
+            loading="lazy"
+          >
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- ==============================
          CONTACT
-    ========================== -->
+    =============================== -->
+
     <section class="contact section" id="contact">
 
       <div class="contact-content">
@@ -267,7 +627,10 @@
           Get in touch with Haddy.
         </p>
 
-        <a href="#" class="primary-button">
+        <a
+          href="#"
+          class="primary-button whatsapp-link"
+        >
           Chat on WhatsApp
         </a>
 
@@ -275,29 +638,42 @@
 
     </section>
 
+
   </main>
 
 
-  <!-- =========================
+
+  <!-- ==============================
        FOOTER
-  ========================== -->
+  =============================== -->
+
   <footer class="footer">
 
     <div>
-      <h3>Hair by Haddy</h3>
-      <p>Beautiful wigs. Beautiful you.</p>
+
+      <h3>
+        Hair by Haddy
+      </h3>
+
+      <p>
+        Beautiful wigs. Beautiful you.
+      </p>
+
     </div>
 
+
     <p>
-      © 2026 Hair by Haddy. All rights reserved.
+      © 2026 Hair by Haddy.
+      All rights reserved.
     </p>
 
   </footer>
 
 
+
   <script src="script.js"></script>
 
 </body>
+
 </html>
 ```
-
