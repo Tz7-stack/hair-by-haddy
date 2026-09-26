@@ -1,95 +1,188 @@
-```javascript
-// ========================================
-// HAIR BY HADDY — MAIN JAVASCRIPT
-// ========================================
+// ===============================
+// HAIR BY HADDY - MAIN JAVASCRIPT
+// ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ----------------------------------------
-  // Smooth scrolling
-  // ----------------------------------------
+  // -------------------------------
+  // MOBILE NAVIGATION
+  // -------------------------------
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", event => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close menu when a navigation link is clicked
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  }
+
+
+  // -------------------------------
+  // CURRENT YEAR
+  // -------------------------------
+
+  const yearElement = document.getElementById("year");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+
+  // -------------------------------
+  // PRODUCT ENQUIRY BUTTONS
+  // -------------------------------
+
+  const productLinks = document.querySelectorAll(".product-link");
+  const productSelect = document.getElementById("product");
+
+  productLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+      const productName = link.dataset.product;
+
+      if (productSelect && productName) {
+        productSelect.value = productName;
+      }
+
+    });
+
+  });
+
+
+  // -------------------------------
+  // CONTACT FORM
+  // -------------------------------
+
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+
+    contactForm.addEventListener("submit", (event) => {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name")?.value.trim();
+
+      const product =
+        document.getElementById("product")?.value;
+
+      const message =
+        document.getElementById("message")?.value.trim();
+
+
+      // Basic validation
+      if (!name || !message) {
+        alert("Please enter your name and message.");
+        return;
+      }
+
+
+      // ---------------------------------
+      // IMPORTANT:
+      // Replace this number with Haddy's
+      // WhatsApp number later.
+      // ---------------------------------
+
+      const whatsappNumber = "234XXXXXXXXXX";
+
+
+      let whatsappMessage =
+        `Hello Hair by Haddy!%0A%0A` +
+        `My name is ${encodeURIComponent(name)}.%0A`;
+
+
+      if (product) {
+        whatsappMessage +=
+          `I'm interested in: ${encodeURIComponent(product)}.%0A`;
+      }
+
+
+      whatsappMessage +=
+        `%0A${encodeURIComponent(message)}`;
+
+
+      const whatsappURL =
+        `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+
+      // Open WhatsApp
+      window.open(whatsappURL, "_blank");
+
+    });
+
+  }
+
+
+  // -------------------------------
+  // SMOOTH SCROLLING
+  // -------------------------------
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
       const targetId = link.getAttribute("href");
 
-      if (!targetId || targetId === "#") return;
+      if (!targetId || targetId === "#") {
+        return;
+      }
 
       const target = document.querySelector(targetId);
 
       if (target) {
+
         event.preventDefault();
 
         target.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
+
       }
-    });
-  });
-
-
-  // ----------------------------------------
-  // Navbar shadow on scroll
-  // ----------------------------------------
-
-  const navbar = document.querySelector(".navbar");
-
-  if (navbar) {
-    window.addEventListener("scroll", () => {
-      navbar.classList.toggle("scrolled", window.scrollY > 20);
-    });
-  }
-
-
-  // ----------------------------------------
-  // Wig order buttons
-  // ----------------------------------------
-
-  document.querySelectorAll(".order-button").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      const productName =
-        button.dataset.product ||
-        button.closest(".product-card")?.querySelector("h3")?.textContent ||
-        "wig";
-
-      const message =
-        `Hi Haddy! 👋 I'm interested in the ${productName} wig. Is it available?`;
-
-      console.log("Customer enquiry:", message);
-
-      // WhatsApp number can be added later.
-      alert(
-        `You selected:\n\n${productName}\n\nWe'll connect this button to Hair by Haddy's WhatsApp shortly. 💕`
-      );
 
     });
 
   });
 
 
-  // ----------------------------------------
-  // Scroll reveal animations
-  // ----------------------------------------
+  // -------------------------------
+  // SIMPLE SCROLL REVEAL
+  // -------------------------------
 
   const revealElements = document.querySelectorAll(
-    ".product-card, .about-content, .about-card, .gallery-item, .contact-content"
+    ".product-card, .feature, .about-content, .about-image, .contact-item, .contact-form"
   );
+
 
   if ("IntersectionObserver" in window) {
 
-    const revealObserver = new IntersectionObserver(
-      entries => {
+    const observer = new IntersectionObserver(
+      (entries, observerInstance) => {
 
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
 
           if (entry.isIntersecting) {
 
             entry.target.classList.add("visible");
 
-            revealObserver.unobserve(entry.target);
+            observerInstance.unobserve(entry.target);
 
           }
 
@@ -101,57 +194,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
+
+    revealElements.forEach((element) => {
+      element.classList.add("reveal");
+      observer.observe(element);
     });
 
   } else {
 
-    // Fallback for older browsers
-    revealElements.forEach(element => {
+    revealElements.forEach((element) => {
       element.classList.add("visible");
     });
 
   }
 
-
-  // ----------------------------------------
-  // Image fallback
-  // ----------------------------------------
-
-  document.querySelectorAll("img").forEach(image => {
-
-    image.addEventListener("error", () => {
-
-      image.style.display = "none";
-
-      const parent = image.parentElement;
-
-      if (parent && !parent.querySelector(".image-fallback")) {
-
-        const fallback = document.createElement("div");
-
-        fallback.className = "image-fallback";
-
-        fallback.textContent = "Hair by Haddy";
-
-        parent.appendChild(fallback);
-
-      }
-
-    });
-
-  });
-
-
-  // ----------------------------------------
-  // Website loaded
-  // ----------------------------------------
-
-  console.log(
-    "✨ Hair by Haddy website loaded successfully!"
-  );
-
 });
-```
-
